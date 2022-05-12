@@ -9,7 +9,7 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
     }
   });
 
-const Student= sequelize.define("Student", {
+  const Student= sequelize.define("Student", {
     name: DataTypes.STRING,
     lastname: DataTypes.STRING,
     email: DataTypes.STRING,

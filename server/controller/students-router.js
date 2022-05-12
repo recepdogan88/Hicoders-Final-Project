@@ -3,7 +3,8 @@ import * as studentService from '../service/student-service.js';
 const router = express.Router();
 
 router.get("/students", async (req, res)=>{
-    res.status(200).send("hello");
+    const list = await studentService.getStudents();
+    res.status(200).send(list);
 })
 
 router.get("/students/:id", async (req, res)=>{
@@ -28,7 +29,7 @@ router.put("/students/:id", async (req, res)=>{
 
 router.delete("/:id", async (req, res)=>{
     const studentId = req.params.id;
-    await studentService.endContractWithCustomer(studentId);
+    await studentService.removeStudent(studentId);
     res.status(200).send(null);
 })
 
