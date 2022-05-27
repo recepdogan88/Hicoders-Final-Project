@@ -9,7 +9,8 @@ export async function getStudent(studentId){
 }
 export async function createStudent(student){
   const newStudent = await studentRepository.add(student);
-  return newStudent.dataValues;
+  return newStudent;
+  //.dataValues
 }
 export async function removeStudent(studentId){
   return await studentRepository.remove(studentId);

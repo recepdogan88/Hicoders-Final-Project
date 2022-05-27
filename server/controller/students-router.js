@@ -16,7 +16,7 @@ router.get("/students/:id", async (req, res)=>{
 router.post("/students", async (req, res)=>{
     const student = req.body;
     const newStudent = await studentService.createStudent(student);
-    res.status(201).send(newStudent);
+    res.status(201).send(student);
 })
 
 router.put("/students/:id", async (req, res)=>{
