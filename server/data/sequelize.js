@@ -16,7 +16,21 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
   },{
       tableName: 'Student'
   });
-
+  const Question = sequelize.define(
+    "Question",
+    {
+        question: DataTypes.STRING,
+        option1: DataTypes.STRING,
+        option2: DataTypes.STRING,
+        option3: DataTypes.STRING,
+        option4: DataTypes.STRING,
+        answer: DataTypes.STRING,
+       
+    },
+    {
+        tableName: "Question",
+    }
+);
 await sequelize.sync({ alter: true });
 
-export {Student};
+export {Student,Question};
