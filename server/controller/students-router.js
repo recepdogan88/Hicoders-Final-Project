@@ -16,18 +16,18 @@ router.get("/students/:id", async (req, res)=>{
 router.post("/students", async (req, res)=>{
     const student = req.body;
     const newStudent = await studentService.createStudent(student);
-    res.status(201).send(newStudent);
+    res.status(201).send(student);
 })
 
 router.put("/students/:id", async (req, res)=>{
     const studentId = req.params.id;
     const existingStudent = req.body;
-    const updatedStudent = await studentService.updatedStudent(studentId, existingStudent);
+    const updatedStudent = await studentService.updateStudent(studentId, existingStudent);
     
     res.status(200).send(updatedStudent);
 })
 
-router.delete("/:id", async (req, res)=>{
+router.delete("/students/:id", async (req, res)=>{
     const studentId = req.params.id;
     await studentService.removeStudent(studentId);
     res.status(200).send(null);
