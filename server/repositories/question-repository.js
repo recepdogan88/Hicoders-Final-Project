@@ -14,10 +14,14 @@ export async function add(pObj){
 }
 
 export async function update(pId, pObj){
-
-    return await Question.update(pObj, {
-        where: {id: pId}
-      });
+    try {
+        await Question.update(pObj, {
+            where: {id: pId}
+          });
+          return await Question.findByPk(pId);
+      } catch (e) {
+        console.log(e.message);
+      }
 }
 
 export async function remove(pId){
