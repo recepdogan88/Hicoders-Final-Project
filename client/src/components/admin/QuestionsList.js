@@ -11,6 +11,7 @@ export const QuestionsList = () => (
             <TextField source="option3" />
             <TextField source="option4" />
             <TextField source="answer" />
+            <TextField source="category" />
             <EditButton />
             <DeleteButton mutationMode="pessimistic" />
         </Datagrid>

@@ -31,6 +31,7 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
         tableName: "Question",
     }
 );
+
 await sequelize.sync({ alter: true });
 
 export {Student,Question};
