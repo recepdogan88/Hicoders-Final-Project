@@ -25,7 +25,7 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
         option3: DataTypes.STRING,
         option4: DataTypes.STRING,
         answer: DataTypes.STRING,
-       
+        category: DataTypes.STRING,
     },
     {
         tableName: "Question",
