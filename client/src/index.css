@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.tebrik{
+  font-size: 10vh;
+  margin-top: 30vh;
+  margin-left: 49vh;
+  color: aquamarine;
+}

@@ -7,9 +7,10 @@ export default function Information() {
     function changePage(){
       navigate("/exam")
     }
+    
   return (
     <div>
-        <button style={{width: '100px'}} onClick={changePage}>GO TO PAGE</button>
+        <button style={{width: '80px'}} onClick={changePage}>GO TO PAGE</button>
     </div>
   )
 }
