@@ -16,8 +16,7 @@ router.get("/questions/:id", async (req, res)=>{
 router.post("/questions", async (req, res)=>{
     const question = req.body;
     const newQuestion = await questionService.createQuestion(question);
-    console.log('new student created', newQuestion);
-    // const students = await studentService.getStudents();
+    console.log('new student create', newQuestion);
     res.status(201).json(question);
 })
 
