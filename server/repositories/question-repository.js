@@ -1,16 +1,29 @@
-import {Question} from "../data/sequelize.js"
+import {Options, Question} from "../data/sequelize.js"
 
 export async function findAll(){
-    return await Question.findAll();
+    return await Question.findAll({
+        include: Options
+    });
 }
 
 export async function findById(pId){
-    return await Question.findByPk(pId);
+    return await Question.findByPk(pId, {
+        include: Options
+    });
 }
 
 export async function add(pObj){
-    const student = await Question.create(pObj);
-    return student;
+    console.log(pObj);
+   const {question, category, answer, option1, option2, option3, option4} = pObj
+    const newQuestion = await Question.create({question, answer, category});
+    // create the options
+    const questionsBulkArr = [option1,  option2, option3, option4].map(option => ({
+        option, 
+        QuestionId: newQuestion.id
+        })
+    )
+    await Options.bulkCreate(questionsBulkArr)
+    return newQuestion;
 }
 
 export async function update(pId, pObj){
