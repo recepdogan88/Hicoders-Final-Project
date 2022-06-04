@@ -16,4 +16,12 @@ code {
   margin-top: 30vh;
   margin-left: 49vh;
   color: aquamarine;
+  width: 30vh;
+}
+.tebrikicon{
+  font-size: 20vh;
+  margin-top: 30vh;
+  margin-left: 85vh;
+  color: aquamarine;
+  width: 30vh;
 }

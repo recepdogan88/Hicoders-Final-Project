@@ -24,9 +24,7 @@ const ListToolbar = () => (
 export const StudentsList = () => (
     <List  >
         
-        <Datagrid rowClick="edit" size="medium"sx={{
-                '& .column-name': { backgroundColor: '#fee' },
-            }} >
+        <Datagrid rowClick="edit" size="small" >
             <TextField source="id" />
             <TextField source="name" />
             <TextField source="lastname" />

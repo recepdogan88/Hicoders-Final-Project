@@ -7,15 +7,16 @@ import { QuestionsList } from "../components/admin/QuestionsList";
 import { QuestionCreate } from "../components/admin/QuestionCreate";
 import { QuestionEdit } from "../components/admin/QuestionEdit";
 import Person from "@mui/icons-material/Person";
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
 import React from 'react'
 
 export default function AdminPage() {
   return (
    
-    <Admin basename="/admin" dataProvider={dataProvider}>
+    <Admin size="large" basename="/admin" dataProvider={dataProvider}>
             <Resource name="students" list={StudentsList} create={StudentCreate} edit={StudentEdit} icon={Person} />
-            <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={Person} />
+            <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={QuestionMarkIcon} />
     </Admin>
     
   )

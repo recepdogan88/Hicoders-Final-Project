@@ -1,8 +1,9 @@
 import * as React from "react";
 import { List, Datagrid, TextField, EditButton, DeleteButton } from "react-admin";
 
-export const QuestionsList = () => (
-    <List>
+export const QuestionsList = (props) => {
+    console.log(props);
+   return ( <List>
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="question" />
@@ -16,4 +17,5 @@ export const QuestionsList = () => (
             <DeleteButton mutationMode="pessimistic" />
         </Datagrid>
     </List>
-);
+   )
+}

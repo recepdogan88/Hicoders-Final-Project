@@ -6,7 +6,7 @@ import { RichTextInput } from 'ra-input-rich-text';
 export const QuestionCreate = (props) => (
     <Create title="Create a Question" redirect="list">
         <SimpleForm>
-        <RichTextInput source="question"  />
+        <RichTextInput source="question" />
             <TextInput source="option1" />
             <TextInput source="option2" />
             <TextInput source="option3" />
