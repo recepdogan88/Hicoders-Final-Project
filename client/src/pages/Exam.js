@@ -1,8 +1,8 @@
 import React from 'react'
-import { MyTimer } from '../components/exam/MyTimer'
-import {useState,useEffect} from "react"
-import axios from 'axios';
 
+import {useState,useEffect} from "react"
+import { EnglishContext } from '../context/EnglishContext'
+import { useContext } from 'react'
 
 
 export default function Exam() {

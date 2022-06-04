@@ -1,9 +1,32 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton, DeleteButton } from "react-admin";
+import { List, Datagrid, TextField, EditButton, DeleteButton,  FilterButton,
+    FilterForm,
+    ListBase,
+    Pagination,
+    TextInput,
+ } from "react-admin";
+ import { Stack } from '@mui/material';
+ 
 
-export const QuestionsList = (props) => {
-    console.log(props);
+const postFilters = [
+    <TextInput label="Search" source="q" alwaysOn />,
+    <TextInput label="Title" source="title" defaultValue="Hello, World!" />,
+];
+
+const ListToolbar = () => (
+    <Stack direction="row" justifyContent="space-between">
+        <FilterForm filters={postFilters} />
+        <div>
+            <FilterButton filters={postFilters} />
+            
+        </div>
+    </Stack>
+)
+
+export const QuestionsList = () => {
+    
    return ( <List>
+       <ListToolbar />
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="question" />
@@ -16,6 +39,7 @@ export const QuestionsList = (props) => {
             <EditButton/>
             <DeleteButton mutationMode="pessimistic" />
         </Datagrid>
+        <Pagination />
     </List>
    )
 }

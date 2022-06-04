@@ -2,10 +2,19 @@ import * as React from "react";
 import {  Create, SimpleForm,  TextInput ,SelectInput } from "react-admin";
 import { RichTextInput } from 'ra-input-rich-text';
 
+const validateUserCreation = (values) => {
+    const errors = {};
+    const {answer,option1,option2,option3,option4}=values
+    if (!((answer == option1) || (answer == option2)||(answer == option3)||(answer == option4))) {
+        errors.answer = 'The options must include the answer ';
+    }
+    return errors
+};
+
 
 export const QuestionCreate = (props) => (
     <Create title="Create a Question" redirect="list">
-        <SimpleForm>
+        <SimpleForm validate={validateUserCreation}>
         <RichTextInput source="question" />
             <TextInput source="option1" />
             <TextInput source="option2" />

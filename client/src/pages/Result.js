@@ -11,7 +11,7 @@ export default function Result() {
       <Confetti/>
      <h1 class="tebrik">CONGRATULATIONS </h1>
      <span class="tebrikicon"><CheckCircleIcon fontSize='600px'/></span>
-     <span>{company}</span>
+    
       </>
     
   )
