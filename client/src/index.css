@@ -25,3 +25,10 @@ code {
   color: aquamarine;
   width: 30vh;
 }
+.information{
+  margin-top: 30vh;
+  margin-left: 80vh;
+ }
+ .question{
+   font-size: 30px;
+ }

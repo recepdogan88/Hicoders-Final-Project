@@ -9,8 +9,9 @@ export default function Information() {
     }
     
   return (
-    <div>
-        <button style={{width: '80px'}} onClick={changePage}>GO TO PAGE</button>
+    <div className='information'>
+      <h1>INFORMATION PAGE</h1>
+      <button type="button" onClick={changePage} class="btn btn-outline-primary btn-lg m-5">START THE EXAM</button>
     </div>
   )
 }

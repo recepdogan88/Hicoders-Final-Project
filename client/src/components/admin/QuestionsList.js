@@ -1,32 +1,21 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton, DeleteButton,  FilterButton,
-    FilterForm,
-    ListBase,
+import { List, Datagrid, TextField, EditButton, DeleteButton,  
     Pagination,
     TextInput,
+    Filter,
+    SearchInput,
  } from "react-admin";
- import { Stack } from '@mui/material';
+ 
  
 
-const postFilters = [
-    <TextInput label="Search" source="q" alwaysOn />,
-    <TextInput label="Title" source="title" defaultValue="Hello, World!" />,
-];
 
-const ListToolbar = () => (
-    <Stack direction="row" justifyContent="space-between">
-        <FilterForm filters={postFilters} />
-        <div>
-            <FilterButton filters={postFilters} />
-            
-        </div>
-    </Stack>
-)
+export const QuestionsList = (props) => {
+    const postFilters = [
+        <SearchInput source="q" alwaysOn />
+    ];
 
-export const QuestionsList = () => {
-    
-   return ( <List>
-       <ListToolbar />
+   return ( <List {...props} filters={<postFilters />}>
+       
         <Datagrid rowClick="edit">
             <TextField source="id" />
             <TextField source="question" />

@@ -6,21 +6,21 @@ export const EnglishContext = createContext();
 
 export default function EnglishContextProvider(props) {
 
-  const [data,setdata]=useState(null)
+  const [newdata, setNewdata] = useState("")
+  const [score, setScore] = useState(0)
 
   useEffect(() => {
     getData()
- },[]);
- 
-  async function getData(){
-    const response=await axios.get("http://localhost:5000/questions")
-    setdata(response.data)
-    console.log(response.data)
-  }
+  }, []);
 
+  async function getData() {
+    const response = await fetch('http://localhost:5000/questions')
+    const data = await response.json()
+    setNewdata(data)
+  }
   return (
     <EnglishContext.Provider
-      value={{ data }}
+      value={{ newdata, score, setScore }}
     >
       {props.children}
     </EnglishContext.Provider>

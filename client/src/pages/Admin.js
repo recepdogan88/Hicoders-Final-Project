@@ -17,7 +17,9 @@ export default function AdminPage() {
     <Admin size="large" basename="/admin" dataProvider={dataProvider}>
             <Resource name="students" list={StudentsList} create={StudentCreate} edit={StudentEdit} icon={Person} />
             <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={QuestionMarkIcon} />
+            
     </Admin>
     
   )
 }
+//<Resource name="exams" list={CreateExam} />
