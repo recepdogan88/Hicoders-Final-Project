@@ -1,9 +1,9 @@
-import "./App.css";
 import { BrowserRouter ,Routes,Route} from "react-router-dom";
 import AdminPage from "./pages/Admin";
 import Exam from "./pages/Exam";
 import Information from "./pages/Information";
 import Result from "./pages/Result";
+
 
 function App() {
     return (

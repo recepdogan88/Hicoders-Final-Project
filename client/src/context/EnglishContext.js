@@ -8,6 +8,8 @@ export default function EnglishContextProvider(props) {
 
   const [newdata, setNewdata] = useState("")
   const [score, setScore] = useState(0)
+  const [currentAnswer, setCurrentAnswer] = useState(null)
+  const [next, setNext] = useState(0)
 
   useEffect(() => {
     getData()
@@ -20,7 +22,7 @@ export default function EnglishContextProvider(props) {
   }
   return (
     <EnglishContext.Provider
-      value={{ newdata, score, setScore }}
+      value={{ newdata, score, setScore,currentAnswer, setCurrentAnswer,next,setNext}}
     >
       {props.children}
     </EnglishContext.Provider>

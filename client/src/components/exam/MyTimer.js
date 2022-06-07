@@ -1,27 +1,30 @@
-import React from 'react';
 import { useTimer } from 'react-timer-hook';
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export function MyTimer({ expiryTimestamp }) {
-  let navigate = useNavigate();
-  const {
-    seconds,
-    minutes,
-  } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
 
-  function navigatePage(){
-    if(minutes==0&&seconds==0){
-      navigate("/admin")
+  let navigate = useNavigate();
+  const { seconds, minutes, } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
+
+  let inputStyle = {}
+
+  if (minutes < 2) {
+    inputStyle = {
+      color: "red"
     }
   }
-  navigatePage()
+  
 
+  function navigatePage() {
+      if (minutes == 0 && seconds == 0) {
+          navigate("/result")
+      }
+  }
+  navigatePage()
   return (
-    <div style={{textAlign: 'center'}}>
-      <h1>react-timer-hook </h1>
-      <p>Timer Demo</p>
-      <div style={{fontSize: '50px'}}>
-       <span>{minutes}</span>:<span>{seconds}</span>
+    <div style={{ textAlign: 'center' }}>
+      <div style={{ fontSize: '40px' }}>
+        <span style={inputStyle}>{minutes}:{seconds}</span>
       </div>
     </div>
   );
