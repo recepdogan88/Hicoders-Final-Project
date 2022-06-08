@@ -8,13 +8,20 @@ export default {
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
         const { field, order } = params.sort;
+        //query to stringify
         const query = {
-            sort: JSON.stringify([field, order]),
-            range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
             filter: JSON.stringify(params.filter),
+            sort: JSON.stringify([field, order]),
+            range: JSON.stringify([(page - 1) * perPage, page * perPage - 1])
         };
-        const url = `${apiUrl}/${resource}`;
+      
 
+      
+        
+        let url = `${apiUrl}/${resource}?${stringify(params['pagination'])}`;
+        if(params.filter['q']) url += `?q=${params.filter['q']}`;
+        
+        
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
             total: parseInt(headers.get("content-range")?.split("/").pop(), 10),

@@ -11,10 +11,10 @@ import { List, Datagrid, TextField, EditButton, DeleteButton,
 
 export const QuestionsList = (props) => {
     const postFilters = [
-        <SearchInput source="q" alwaysOn />
+        <TextInput label="Filter by category" source="q" alwaysOn />,
     ];
 
-   return ( <List {...props} filters={<postFilters />}>
+   return ( <List {...props} filters={postFilters}>
        
         <Datagrid rowClick="edit">
             <TextField source="id" />

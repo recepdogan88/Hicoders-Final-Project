@@ -12,8 +12,8 @@ export default function Information() {
   return (
     <div className='container1'>
       <div className='information d-flex flex-column align-items-center'>
-        <h1>INFORMATION PAGE</h1>
-        <button type="button"  onClick={changePage} class="btn btn-outline-primary fs-3 start-button">START THE EXAM</button>
+        <h1 className='title-information'>INFORMATION PAGE</h1>
+        <button type="button"  onClick={changePage} class="btn btn-outline-primary fs-3 start">START THE EXAM</button>
       </div>
     </div>
 
