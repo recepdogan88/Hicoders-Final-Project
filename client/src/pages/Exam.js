@@ -8,7 +8,7 @@ import "./css/Exam.css"
 export default function Exam() {
 
   return (
-    <div className='container container1 w-100'>
+    <div className='container container-exam'>
       <div className='row exam d-flex flex-column w-25'>
         <ExamUpper/>
          <hr className='mb-5'></hr>
