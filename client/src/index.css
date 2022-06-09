@@ -3,43 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 } 
-.tebrik{
-  font-size: 10vh;
-  margin-top: 30vh;
-  margin-left: 49vh;
-  color: aquamarine;
-  width: 30vh;
+
+.number-question{
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem;
+  font-style: italic;
+  color: #2196F3;
 }
-.tebrikicon{
-  font-size: 20vh;
-  margin-top: 30vh;
-  margin-left: 85vh;
-  color: aquamarine;
-  width: 30vh;
-}
-
- .question{
-   font-size: 30px;
- }
- 
- 
-
-
-
-
-
- /*
- body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-*/

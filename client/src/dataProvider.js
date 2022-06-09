@@ -15,10 +15,7 @@ export default {
             range: JSON.stringify([(page - 1) * perPage, page * perPage - 1])
         };
       
-
-      
-        
-        let url = `${apiUrl}/${resource}?${stringify(params['pagination'])}`;
+        let url = `${apiUrl}/${resource}`;
         if(params.filter['q']) url += `?q=${params.filter['q']}`;
         
         

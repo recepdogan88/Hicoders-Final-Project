@@ -26,7 +26,7 @@ export default function ExamFooter() {
     return (
         <div className='d-flex justify-content-between mt-5'>
             <button type="button" style={{ width: "140px", height: "60px" }} onClick={previousQuestion} class="btn btn-danger m-5 button1">PREVIOUS</button>
-            <button type="button" style={{ width: "140px", height: "60px" }} onClick={nextQuestion} class="btn btn-success m-5 button1">NEXT</button>
+            <button type="button" style={{ width: "140px", height: "60px" }} onClick={nextQuestion} class="btn btn-info m-5 button1">NEXT</button>
         </div>
     )
 }

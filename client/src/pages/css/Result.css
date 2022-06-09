@@ -1,3 +1,38 @@
-*{
-    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+body{
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    font-size: 30px; 
 }
+
+
+.congrat{
+    font-size: 7rem;
+    font-family: sans-serif;
+    color: rgb(23, 165, 132);
+}
+.icon{
+    font-size: 15rem;
+    color: rgb(72, 194, 190);
+}
+.point{
+    font-size: 5rem;
+    color: rgb(72, 194, 190);
+}
+.score{
+    margin: auto;
+    margin-top: 10rem;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center
+}
+
+  
+   
+   
+   
+  
+  
+  
+  
+  

@@ -1,4 +1,4 @@
-import { Admin,  Resource } from "react-admin";
+import { Admin, Resource } from "react-admin";
 import dataProvider from "../dataProvider";
 import { StudentsList } from "../components/admin/StudentsList";
 import { StudentCreate } from "../components/admin/StudentCreate";
@@ -9,17 +9,18 @@ import { QuestionEdit } from "../components/admin/QuestionEdit";
 import Person from "@mui/icons-material/Person";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 
+
+
 import React from 'react'
 
 export default function AdminPage() {
   return (
-   
-    <Admin size="large" basename="/admin" dataProvider={dataProvider}>
-            <Resource name="students" list={StudentsList} create={StudentCreate} edit={StudentEdit} icon={Person} />
-            <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={QuestionMarkIcon} />
-            
+
+    <Admin  basename="/admin" dataProvider={dataProvider}>
+      <Resource name="students" list={StudentsList} create={StudentCreate} edit={StudentEdit} icon={Person} />
+      <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={QuestionMarkIcon} />
     </Admin>
-    
+
   )
 }
 //<Resource name="exams" list={CreateExam} />

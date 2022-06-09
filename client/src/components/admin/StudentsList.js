@@ -1,8 +1,8 @@
 import * as React from "react";
 import { List, Datagrid, TextField, EditButton, FilterButton,
 FilterForm, EmailField, CreateButton, TextInput, DeleteButton } from "react-admin";
-    
-    
+
+ 
 
 import { Stack } from '@mui/material';
 
@@ -22,7 +22,7 @@ const ListToolbar = () => (
 )
 
 export const StudentsList = () => (
-    <List  >
+    <List>
         
         <Datagrid rowClick="edit" size="small" >
             <TextField source="id" />

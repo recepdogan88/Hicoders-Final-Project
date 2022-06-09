@@ -22,9 +22,9 @@ export const QuestionCreate = (props) => (
             <TextInput source="option4" />
             <TextInput source="answer" />
             <SelectInput source="category" choices={[
-            { id: 'grammar', name: 'Grammar' },
-            { id: 'reading', name: 'Reading' },
-            { id: 'listening', name: 'Listening' },
+            { id: 'grammar', name: 'grammar' },
+            { id: 'reading', name: 'reading' },
+            { id: 'listening', name: 'listening' },
         ]} />          
         </SimpleForm>
     </Create>
