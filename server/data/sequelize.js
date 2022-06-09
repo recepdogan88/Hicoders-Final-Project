@@ -1,4 +1,4 @@
-import { Sequelize , Model, DataTypes} from "sequelize";
+import { Sequelize , DataTypes} from "sequelize";
 
 const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
     host: "localhost",
@@ -20,6 +20,10 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
     "Question",
     {
       question: DataTypes.STRING,
+      option1: DataTypes.STRING,
+      option2: DataTypes.STRING,
+      option3: DataTypes.STRING,
+      option4: DataTypes.STRING,
       answer: DataTypes.STRING,
       category: DataTypes.STRING,
     },
@@ -27,22 +31,22 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
         tableName: "Question",
     }
 );
-const Options = sequelize.define(
-  "Options", 
-  {
-    option: DataTypes.STRING
-  }, 
-  {
-    tableName: 'Options'
-  }
-)
+// const Options = sequelize.define(
+//   "Options", 
+//   {
+//     option: DataTypes.STRING
+//   }, 
+//   {
+//     tableName: 'Options'
+//   }
+// )
 
-Question.hasMany(Options); 
+//Question.hasMany(Options); 
 
 //DataTypes.ARRAY(DataTypes.DECIMAL)
 await sequelize.sync({ alter: true });
 
-export {Student,Question, Options};
+export {Student,Question};
 
 /*
 option1: DataTypes.STRING,

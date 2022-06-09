@@ -3,7 +3,8 @@ import * as questionService from '../service/question-service.js';
 const router = express.Router();
 
 router.get("/questions", async (req, res)=>{
-    const list = await questionService.getQuestions();
+    const {q: query} = req.query;
+    const list = await questionService.getQuestions(query);
     res.status(200).send(list);
 })
 

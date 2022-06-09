@@ -1,7 +1,7 @@
 import * as questionRepository from "../repositories/question-repository.js"
 
-export async function getQuestions(){
-    return await questionRepository.findAll();
+export async function getQuestions(query){
+    return await questionRepository.findAll(query);
 }
 
 export async function getQuestion(questionId){
