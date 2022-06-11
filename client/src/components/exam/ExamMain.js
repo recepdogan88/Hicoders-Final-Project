@@ -4,7 +4,9 @@ import { EnglishContext } from '../../context/EnglishContext';
 import { useEffect } from 'react'
 
 export default function ExamMain() {
-    const { newdata, next, setCurrentAnswer } = useContext(EnglishContext)
+    const { newdata, next, setNext, setCurrentAnswer } = useContext(EnglishContext)
+
+    
 
     useEffect(() => {
         Array.from(document.querySelectorAll("input[type='radio']")).forEach(item => item.checked = false)
@@ -16,11 +18,11 @@ export default function ExamMain() {
 
     let options = Object.keys(newdata[next]).filter(key => key.includes('option'));
     options = options.map(key => newdata[next][key]);
-console.log(newdata)
+
     return (
-        <div className='d-flex flex-column col-8 m-5'>
+        <div className='d-flex flex-column m-5'>
             <div className='d-flex flex-row'>
-             <span style={{fontSize:"30px",fontWeight: "bold"}}>{next+1}</span><span style={{fontSize:"30px",fontWeight: "bold"}}> - </span><div className='question ms-5' dangerouslySetInnerHTML={{ __html: newdata[next].question }} />
+                <span style={{ fontSize: "30px", fontWeight: "bold" }}>{next + 1}</span><span style={{ fontSize: "30px", fontWeight: "bold" }}> - </span><div className='question' dangerouslySetInnerHTML={{ __html: newdata[next].question }} />
             </div>
             {options.map((option, index) => (
                 <div key={index} className='d-flex flex-row'>

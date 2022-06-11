@@ -15,12 +15,9 @@ export default function () {
     }
 
     return (
-        <div className=''>
             <div className='d-flex flex-row justify-content-between m-3'>
                 <h2 className='mt-2 ps-4'>{newdata[next].category.toUpperCase()}</h2>
                 <MyTimer expiryTimestamp={time} />
             </div>
-        </div>
-
     )
 }

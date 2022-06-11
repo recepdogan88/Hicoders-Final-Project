@@ -2,8 +2,9 @@ body{
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     font-size: 30px; 
 }
-
-
+.tebrik {
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); 
+}
 .congrat{
     font-size: 7rem;
     font-family: sans-serif;

@@ -12,8 +12,9 @@
 }
 .title-information{
     color: rgb(34, 117, 189);
-    font-size: 5rem;
+    font-size: 10vh;
     font-family: sans-serif;
+    
 }
 .start{
     width: 15rem;

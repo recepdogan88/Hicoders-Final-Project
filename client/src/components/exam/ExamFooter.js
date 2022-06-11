@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { EnglishContext } from '../../context/EnglishContext';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'
 
 export default function ExamFooter() {
 
@@ -14,7 +15,7 @@ export default function ExamFooter() {
     function previousQuestion() {
         setNext(next => next - 1);
     }
-
+    
     //in order to display next question
     function nextQuestion() {
         if (!currentAnswer) return swal('PLEASE CHOOSE ONE OPTION')

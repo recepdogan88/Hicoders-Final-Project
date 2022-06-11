@@ -9,15 +9,19 @@ export default function Result() {
   const { score } = useContext(EnglishContext)
 
   return (
-    
-      <div className='result'>
-        <Confetti />
-        <div className='score'>
+      <>
+      <Confetti />
+      <div className='tebrik w-100 h-100'>
+      <div className='score'>
           <div class="congrat">CONGRATULATIONS</div>
           <div class="icon"><CheckCircleIcon fontSize='600px' /></div>
           <div className='point'>SCORE : {score}</div>
         </div>
       </div>
+        
+      </>
+        
+     
     
 
   )
