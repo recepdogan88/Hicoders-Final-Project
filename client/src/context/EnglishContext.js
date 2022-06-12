@@ -1,6 +1,6 @@
 import React from 'react'
 import { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
+
 
 export const EnglishContext = createContext();
 
@@ -9,10 +9,11 @@ export default function EnglishContextProvider(props) {
   const [newdata, setNewdata] = useState("")
   const [score, setScore] = useState(0)
   const [currentAnswer, setCurrentAnswer] = useState(null)
-  const [next, setNext] = useState(JSON.parse(localStorage.getItem('next')) || 0)
+  const [next, setNext] = useState(0)
 
   useEffect(() => {
     getData()
+    setNext(JSON.parse(localStorage.getItem('next')) || 0)
   }, []);
 
   async function getData() {

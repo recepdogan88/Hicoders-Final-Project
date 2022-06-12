@@ -22,10 +22,15 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8p
 .question{
  width: 100%;
 }
-/*
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-*/ 
-    
+
+.navbar{
+    background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);
+}
+.link {
+    color: #f0f8ff;
+    text-decoration: none;
+}
+.link:hover {
+    color: #bcd1e3;
+    text-decoration: none;
+} 

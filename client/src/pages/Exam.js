@@ -5,6 +5,7 @@ import "./css/Exam.css"
 import { useContext } from 'react'
 import { EnglishContext } from '../context/EnglishContext'
 import { useEffect } from 'react'
+import NavBar from '../components/exam/NavBar'
 
 
 
@@ -19,14 +20,20 @@ export default function Exam() {
 
 
   return (
-    <div className='main-exam row'>
-      <div className='row exam d-flex flex-column col-6'>
+    <>
+    <NavBar/>
+    <div className='main-exam row '>
+      <div className='d-flex flex-column'>
+      <div className='exam d-flex flex-column col-6 mt-4'>
         <ExamUpper/>
          <hr className='mb-5'></hr>
          <ExamMain/>
          <ExamFooter/>
       </div>
+      </div>
     </div>
+    </>
+    
   )
 }
 
