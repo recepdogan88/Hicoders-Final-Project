@@ -11,7 +11,7 @@ export default function Result() {
   return (
       <>
       <Confetti />
-      <div className='tebrik w-100 h-100'>
+      <div className='tebrik'>
       <div className='score'>
           <div class="congrat">CONGRATULATIONS</div>
           <div class="icon"><CheckCircleIcon fontSize='600px' /></div>

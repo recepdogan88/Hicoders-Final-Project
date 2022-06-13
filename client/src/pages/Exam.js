@@ -22,7 +22,7 @@ export default function Exam() {
   return (
     <>
     <NavBar/>
-    <div className='main-exam row '>
+    <div className='main-exam'>
       <div className='d-flex flex-column'>
       <div className='exam d-flex flex-column col-6 mt-4'>
         <ExamUpper/>
