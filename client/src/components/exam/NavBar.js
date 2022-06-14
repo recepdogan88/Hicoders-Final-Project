@@ -1,23 +1,42 @@
-import React, { useState } from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom'
+import AuthLoginButton from '../../pages/AuthLoginButton';
+import AuthLogoutButton from '../../pages/AuthLogoutButton';
 
 
 export default function NavBar() {
 
-    const [user, setUser] = useState(true)
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
+    if (isLoading) {
+        return <div>Loading ...</div>;
+    }
+
+    if (isAuthenticated) {
+        console.log(user);
+    }
 
     return (
         <nav className="navbar navbar-light">
             <div class="container-fluid d-flex flex-row">
+                <div>
                 <Link to="/exam" className='m-2 link'>
-                     EXAM APP
+                    EXAM APP
                 </Link>
-                {user ? <Link to="" onClick={() => setUser(!user)} className='m-2 link'>
-                    LOG OUT
-                </Link>
-                    : <Link to="" onClick={() => setUser(!user)} className='m-2 link'>
-                         LOGIN
-                    </Link>}
+                </div>
+                <div className='d-flex'>
+                {user ? <AuthLogoutButton />
+                    : <AuthLoginButton />
+                }
+                {isAuthenticated && (
+                    <div className='d-flex'>
+                        <img src={user.picture} alt={"."} className="rounded-circle profil-picture m-2"/>
+                        <h5 className='mt-4'>WELCOME {user.name}</h5>
+                    </div>
+                )}
+                </div>
+                
             </div>
         </nav >
 

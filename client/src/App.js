@@ -5,13 +5,16 @@ import Information from "./pages/Information";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Result from "./pages/Result";
-
+import Home from "./pages/Home";
+import NavBar from "./components/exam/NavBar";
 
 
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
+      <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/information" element={<Information />} />

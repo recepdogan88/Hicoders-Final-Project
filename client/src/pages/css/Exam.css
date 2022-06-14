@@ -29,8 +29,26 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8p
 .link {
     color: #f0f8ff;
     text-decoration: none;
+    border: none;
+    font-size: 30px;
 }
+
 .link:hover {
     color: #bcd1e3;
     text-decoration: none;
 } 
+.log-in {
+    font-size: 30px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;   ; 
+    color: #f0f8ff;
+}
+.log-in:active{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none; 
+}
+.profil-picture{
+    width: 2.7rem;
+}
