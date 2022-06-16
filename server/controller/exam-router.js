@@ -3,8 +3,8 @@ import * as examService from '../service/exam-service.js';
 const router = express.Router();
 
 router.get("/exams", async (req, res)=>{
-    const list = await examService.getExams();
-    res.status(200).send(list);
+    const examlist = await examService.getExams();
+    res.status(200).send(examlist);
 })
 
 router.get("/exams/:id", async (req, res)=>{
@@ -33,4 +33,4 @@ router.delete("/exams/:id", async (req, res)=>{
     res.status(200).send(null);
 })
 
-export {router};
+export {router };
