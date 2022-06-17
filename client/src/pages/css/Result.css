@@ -1,7 +1,10 @@
+body{
+    background-color: rgb(213, 240, 240);
+}
 .tebrik {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); 
+    
 }
 .congrat{
     font-size: 7rem;

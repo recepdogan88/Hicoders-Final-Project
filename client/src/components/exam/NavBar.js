@@ -21,11 +21,17 @@ export default function NavBar() {
         <nav className="navbar navbar-light">
             <div class="container-fluid d-flex flex-row">
                 <div>
-                <Link to="/exam" className='m-2 link'>
+                <Link to="/" className='m-2 link'>
                     EXAM APP
                 </Link>
                 </div>
+                
                 <div className='d-flex'>
+                <div className='mt-2 nav-ex '>
+                <Link to="/information" className='link'>
+                    Exam
+                </Link>
+                </div>
                 {user ? <AuthLogoutButton />
                     : <AuthLoginButton />
                 }

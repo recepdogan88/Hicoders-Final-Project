@@ -13,8 +13,8 @@ export default function EnglishContextProvider(props) {
 
   useEffect(() => {
     getData()
-    setNext(JSON.parse(localStorage.getItem('next')) || 0)
   }, []);
+
 
   async function getData() {
     const response = await fetch('http://localhost:5000/questions')

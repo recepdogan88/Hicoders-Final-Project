@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List, Datagrid, TextField, EditButton, Edit, EmailField, Create, SimpleForm, ReferenceInput, SelectInput, TextInput, DeleteButton } from "react-admin";
+import {  Edit,  SimpleForm, TextInput } from "react-admin";
 
 
 export const StudentEdit = () => (

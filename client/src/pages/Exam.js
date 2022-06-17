@@ -14,26 +14,25 @@ export default function Exam() {
   const { setNext, next } = useContext(EnglishContext)
 
   useEffect(() => {
-   window.localStorage.setItem('next', JSON.stringify(next));
-}, [next]);
+    window.localStorage.setItem('next', JSON.stringify(next));
+  }, [next]);
 
 
 
   return (
     <>
-    <NavBar/>
-    <div className='main-exam'>
-      <div className='d-flex flex-column'>
-      <div className='exam d-flex flex-column col-6 mt-4'>
-        <ExamUpper/>
-         <hr className='mb-5'></hr>
-         <ExamMain/>
-         <ExamFooter/>
+      <div className='main-exam'>
+        <div className='d-flex flex-column'>
+          <div className='exam d-flex flex-column col-6 mt-4'>
+            <ExamUpper />
+            <hr className='mb-5'></hr>
+            <ExamMain />
+            <ExamFooter />
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
     </>
-    
+
   )
 }
 

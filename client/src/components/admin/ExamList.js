@@ -7,7 +7,8 @@ export const ExamList = () => (
     <List>
         <Datagrid rowClick="edit" size="small" >
             <TextField source="examname" />
-            <TextField source="published_at" />
+            <TextField source="start" />
+            <TextField source="end" />
             <EditButton />
             <DeleteButton mutationMode="pessimistic" />
         </Datagrid>

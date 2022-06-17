@@ -10,6 +10,8 @@ import Person from "@mui/icons-material/Person";
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import { ExamList } from "../components/admin/ExamList";
 import { ExamCreate } from "../components/admin/ExamCreate";
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import { ExamEdit } from "../components/admin/ExamEdit";
 import React from 'react'
 
 export default function AdminPage() {
@@ -18,7 +20,7 @@ export default function AdminPage() {
       <Admin basename="/admin" dataProvider={dataProvider}>
         <Resource name="students" list={StudentsList} create={StudentCreate} edit={StudentEdit} icon={Person} />
         <Resource name="questions" list={QuestionsList} create={QuestionCreate} edit={QuestionEdit} icon={QuestionMarkIcon} />
-        <Resource name="exams" list={ExamList} create={ExamCreate} icon={QuestionMarkIcon} />
+        <Resource name="exams" list={ExamList} create={ExamCreate} edit={ExamEdit} icon={AssignmentIcon} />
       </Admin>
     </div>
 
