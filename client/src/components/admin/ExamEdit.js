@@ -3,7 +3,7 @@ import {  Edit,  SimpleForm, TextInput,DateTimeInput } from "react-admin";
 
 
 export const ExamEdit = () => (
-    <Edit title="Edit Exam">
+    <Edit title="Edit the exam">
         <SimpleForm>
             <TextInput source="examname" />
             <DateTimeInput source="start" />
