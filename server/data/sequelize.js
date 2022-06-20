@@ -9,13 +9,18 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
   }
 });
 
-const Student = sequelize.define("Student", {
+const User = sequelize.define("User", {
   name: DataTypes.STRING,
   lastname: DataTypes.STRING,
   email: DataTypes.STRING,
+  role: DataTypes.STRING,
 }, {
-  tableName: 'Student'
+  tableName: 'User'
 });
+
+
+
+
 
 const Question = sequelize.define("Question", {
     question: DataTypes.STRING,
@@ -33,8 +38,8 @@ const Question = sequelize.define("Question", {
 
 const Exam = sequelize.define("Exam", {
   examname: DataTypes.STRING,
-  published_at: DataTypes.STRING,
-  
+  start: DataTypes.STRING,
+  end: DataTypes.STRING,
 },
 {
   tableName: "Exam",
@@ -45,5 +50,5 @@ const Exam = sequelize.define("Exam", {
 
 await sequelize.sync({ alter: true });
 
-export { Student, Question, Exam };
+export { User, Question, Exam };
 

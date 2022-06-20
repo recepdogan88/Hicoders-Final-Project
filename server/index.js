@@ -4,6 +4,8 @@ import cors from 'cors';
 import {router as studentRouter} from './controller/students-router.js'
 import { router as questionRouter } from "./controller/question-router.js";
 import { router as examRouter } from "./controller/exam-router.js";
+
+
 const app = express();
 
 // Configuring body parser middleware
@@ -14,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/', studentRouter);
 app.use("/", questionRouter);
 app.use("/",examRouter)
+
 
 app.use((err, req, res, next) => {
     console.error(err.stack)

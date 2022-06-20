@@ -22,14 +22,14 @@ router.post("/exams", async (req, res)=>{
 router.put("/exams/:id", async (req, res)=>{
     const examId = req.params.id;
     const existingExam = req.body;
-    const updatedExam = await examService.updateStudent(examId,  existingExam);
+    const updatedExam = await examService.updateExam(examId,  existingExam);
     
     res.status(200).send(updatedExam);
 })
 
 router.delete("/exams/:id", async (req, res)=>{
     const examId = req.params.id;
-    await examService.removeStudent(examId);
+    await examService.removeExam(examId);
     res.status(200).send(null);
 })
 

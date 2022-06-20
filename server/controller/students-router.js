@@ -5,6 +5,13 @@ const router = express.Router();
 router.get("/students", async (req, res)=>{
     const list = await studentService.getStudents();
     res.status(200).send(list);
+}); 
+
+
+router.get('/check-email', async(req, res)=> {
+    const {email} = req.body
+    const isInDb = await studentService.checkEmail(email); 
+    res.status(200).send(isInDb)
 })
 
 router.get("/students/:id", async (req, res)=>{

@@ -1,7 +1,7 @@
 import * as studentRepository from "../repositories/student-repository.js"
 
 export async function getStudents(){
-    return await studentRepository.findAll();
+    return await studentRepository.findAllStudents();
 }
 
 export async function getStudent(studentId){
@@ -17,4 +17,8 @@ export async function removeStudent(studentId){
 }
 export async function updateStudent(studentId, existingStudent){
   return await studentRepository.update(studentId, existingStudent);
+}
+
+export async function checkEmail(email){
+  return await studentRepository.isInDb(email);
 }
