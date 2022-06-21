@@ -8,7 +8,7 @@ export async function findAllStudents(){
     });
 }
 
-export async function isInDb(email){
+export async function findByEmail(email){
     return await User.findOne({
         where: {
             email

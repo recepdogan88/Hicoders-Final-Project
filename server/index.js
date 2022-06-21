@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/', studentRouter);
+app.use('/students', studentRouter);
 app.use("/", questionRouter);
 app.use("/",examRouter)
 

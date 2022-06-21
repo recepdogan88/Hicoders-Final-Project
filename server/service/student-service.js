@@ -19,6 +19,6 @@ export async function updateStudent(studentId, existingStudent){
   return await studentRepository.update(studentId, existingStudent);
 }
 
-export async function checkEmail(email){
-  return await studentRepository.isInDb(email);
+export async function findByEmail(email){
+  return await studentRepository.findAllStudents(email);
 }

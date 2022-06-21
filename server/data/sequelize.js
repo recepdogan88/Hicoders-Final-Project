@@ -1,4 +1,5 @@
 import { Sequelize, DataTypes } from "sequelize";
+import bcrypt from 'bcrypt'; 
 
 const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
   host: "localhost",
@@ -14,9 +15,38 @@ const User = sequelize.define("User", {
   lastname: DataTypes.STRING,
   email: DataTypes.STRING,
   role: DataTypes.STRING,
-}, {
+  password: DataTypes.STRING
+},
+
+{
+  hooks: {
+    beforeCreate: async(user)=>{
+      if(user.password){
+        const salt = await bcrypt.genSaltSync(10, 'a'); 
+        user.password = bcrypt.hashSync(user.password, salt); 
+      }
+    }, 
+
+    beforeUpdate: async(user)=> {
+      if(user.password){
+        const salt = await bcrypt.genSaltSync(10, 'a'); 
+        user.password = bcrypt.hashSync(user.password, salt); 
+      }
+    }, 
+  },
+  instanceMethods: {
+    validPassword: (password) => {
+      return bcrypt.compareSync(password, this.password)
+    }
+  },
   tableName: 'User'
 });
+
+User.prototype.validPassword = async(password, hash) => {
+  return await bcrypt.compareSync(password, hash); 
+}
+
+
 
 
 
