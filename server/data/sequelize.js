@@ -13,7 +13,14 @@ const sequelize = new Sequelize("finalproject", "root", "yugo1910", {
 const User = sequelize.define("User", {
   name: DataTypes.STRING,
   lastname: DataTypes.STRING,
-  email: DataTypes.STRING,
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false, 
+    unique: true,
+    validate: {
+      isEmail: true
+    }
+  },
   role: DataTypes.STRING,
   password: DataTypes.STRING
 },

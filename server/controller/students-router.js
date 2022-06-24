@@ -13,11 +13,14 @@ router.post('/signup', async(req, res)=> {
     const {email, password} = req.body; 
     try {
         const user = await studentService.findByEmail(email); 
-        if(!user) res.status(401).json("You can't create an account with this email");
+        if(!user) return res.status(401).json("You can't create an account with this email");
         // 
+        if(user.password != null) return res.status(401).json("User already exists.");
         const hashedPassword = await bcrypt.hashSync(password, 10); 
         user.password = hashedPassword; 
         // save user here
+        console.log(hashedPassword);
+        await user.save();
         res.status(200).json(user)
     } catch (error) {
         res.status(401).json("invalid credentials");
@@ -27,9 +30,19 @@ router.post('/signup', async(req, res)=> {
 router.post('/login', async(req,res) => {
     const {email, password} = req.body;
     try {
-
-    } catch(e){
-
+        const user = await studentService.findByEmail(email); 
+        if(!user || user.password === null) return res.status(401).json("Invalid credentials");
+        console.log(user)
+        const isSamePassword = (password, hash) => {
+            let comp = bcrypt.compareSync(password, hash)
+            return comp
+        }
+        //const isSamePassword = await bcrypt.compareSync(password, user.dataValues.password); 
+        //console.log(isSamePassword)
+        if(!isSamePassword) return res.status(401).json("Invalid credentials");
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(401).json("invalid credentials");
     }
 } )
 

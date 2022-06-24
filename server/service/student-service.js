@@ -20,5 +20,5 @@ export async function updateStudent(studentId, existingStudent){
 }
 
 export async function findByEmail(email){
-  return await studentRepository.findAllStudents(email);
+  return await studentRepository.findByEmail(email);
 }
