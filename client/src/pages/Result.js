@@ -3,6 +3,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Confetti from 'react-confetti'
 import { EnglishContext } from '../context/EnglishContext';
 import "./css/Result.css"
+import NavBar from '../components/exam/NavBar';
 
 export default function Result() {
 
@@ -11,6 +12,7 @@ export default function Result() {
   return (
       <>
       <Confetti />
+      <NavBar/>
       <div className='tebrik'>
       <div className='score'>
           <div class="congrat">CONGRATULATIONS</div>

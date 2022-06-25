@@ -17,9 +17,10 @@
     
 }
 .start{
-    width: 15rem;
+    width: 17rem;
     height: 5rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
     border-radius: 30px;
     margin-top: 3rem;
 }

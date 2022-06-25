@@ -2,25 +2,45 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminPage from "./pages/Admin";
 import Exam from "./pages/Exam";
 import Information from "./pages/Information";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 import Result from "./pages/Result";
-import Home from "./pages/Home";
 import NavBar from "./components/exam/NavBar";
+import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
+import { useContext } from "react";
+import { EnglishContext } from "./context/EnglishContext";
+import Home from "./pages/Home";
+
 
 
 function App() {
+  const {user} = useContext(EnglishContext)
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
-      <Route path="/" element={<Home/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/information" element={<Information />} />
-        <Route path="/exam" element={<Exam />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="/admin/*" element={<AdminPage />} />
+        {!user && (
+          <>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/admin/*" element={<AdminPage />} />
+          </>
+        )}
+
+          {user && 
+          (
+            <>
+            <Route path="/information" element={<Information />} />
+            <Route path="/exam" element={<Exam />} />
+            <Route path="/result" element={<Result />} />
+          </>
+          )
+  	      }
+          
+          
+          {/* {user?.isAdmin && 
+            
+          } */}
+            <Route path="*" element={<Home />} />
+
       </Routes>
     </BrowserRouter>
   );

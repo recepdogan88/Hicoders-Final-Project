@@ -2,9 +2,12 @@ import React from 'react'
 import { MyTimer } from './MyTimer';
 import { useContext } from 'react'
 import { EnglishContext } from '../../context/EnglishContext';
+import { useEffect } from 'react';
 
 
 export default function () {
+
+    
 
     const { newdata, next } = useContext(EnglishContext)
     const time = new Date();

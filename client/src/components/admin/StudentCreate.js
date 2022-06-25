@@ -7,6 +7,10 @@ export const StudentCreate = (props) => (
             <TextInput source="name" />
             <TextInput source="lastname" />
             <TextInput source="email" />
+            <SelectInput source="role" defaultValue={"Student"} choices={[
+                {id: 'student', name: "Student"}, 
+                {id: 'admin', name: "Admin"}
+            ]}  />
         </SimpleForm>
     </Create>
 );

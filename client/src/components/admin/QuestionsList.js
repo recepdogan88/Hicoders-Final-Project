@@ -2,16 +2,22 @@ import * as React from "react";
 import { List, Datagrid, TextField, EditButton, DeleteButton, TextInput, } from "react-admin";
 import { useContext } from 'react'
 import { EnglishContext } from "../../context/EnglishContext";
+import { useState } from "react";
 
 
 
 
 export const QuestionsList = (props) => {
-
+    const [filteredData,setFilteredData]=useState("")
     const { newdata } = useContext(EnglishContext)
     const postFilters = [
-        <TextInput label="Filter by category" source="q" alwaysOn />,
+        <TextInput label="Filter by category" source="q" alwaysOn onChange={(e)=> setFilteredData(e.target.value)}/>,
     ];
+    let questions=newdata
+    console.log(questions)
+
+    let filterData=questions.filter(question => question.category.includes(filteredData))
+    console.log(filterData)
 
     return (
        
@@ -29,11 +35,11 @@ export const QuestionsList = (props) => {
                     <DeleteButton mutationMode="pessimistic" />
                 </Datagrid>
                 <div className="d-flex justify-content-end">
-                    <div className="number-question">Number of questions : {newdata.length}</div>
+                    <div className="number-question">Number of questions : {filterData.length}</div>
                 </div>
             </List>
             )
-}
+} 
 /*
 <div className="d-flex justify-content-end">
                 <div className="p-5 fw-bold">Number of questions : {newdata.length}</div>

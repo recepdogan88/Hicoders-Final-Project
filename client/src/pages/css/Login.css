@@ -1,9 +1,59 @@
 .login-main{
-    margin:30vh;
-    margin-left: 70vh;
-    
+    margin-top: 10%;
+    margin-left: 35%;
 }
-.register{
-    margin-top: 20vh;
-    margin-left: 70vh;
+
+body{
+    background-color: aliceblue;
+}
+.sign-in{
+  width: 150px;
+  height: 50px;
+  font-size: 23px;
+  font-weight: 600;
+  background-color: #DD39A3;
+}
+input{
+    height: 50px;
+}
+.titleLogin{
+    font-size: 50px;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #DD39A3;
+}
+.titlesign{
+    font-size: 50px;
+    margin-left: 7rem;
+    margin-bottom: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #DD39A3;
+}
+.login-sign-div{
+    align-items: center;
+}
+.register-link{
+    font-size: 18px;
+}
+
+.logout{
+    background-color:transparent;
+    border: none;
+    color: white;
+}
+.logout:hover{
+    color: rgb(225, 232, 239);
+}
+.back-login{
+    width: 150px;
+    height: 50px;
+    font-size: 23px;
+    font-weight: 600;
+    background-color: #496fb2;
+}
+.signorback-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

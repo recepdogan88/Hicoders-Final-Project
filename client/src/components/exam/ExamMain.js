@@ -3,10 +3,9 @@ import { useContext } from 'react'
 import { EnglishContext } from '../../context/EnglishContext';
 import { useEffect } from 'react'
 
-export default function ExamMain() {
-    const { newdata, next, setNext, setCurrentAnswer } = useContext(EnglishContext)
 
-    
+export default function ExamMain() {
+    const { newdata, next, setCurrentAnswer } = useContext(EnglishContext)
 
     useEffect(() => {
         Array.from(document.querySelectorAll("input[type='radio']")).forEach(item => item.checked = false)
@@ -16,6 +15,7 @@ export default function ExamMain() {
         return <p>Loading...</p>
     }
 
+    //Keys taken from objects
     let options = Object.keys(newdata[next]).filter(key => key.includes('option'));
     options = options.map(key => newdata[next][key]);
 
