@@ -7,9 +7,6 @@ export default function Information() {
 
   let navigate = useNavigate();
   
-  function changePage() {
-    navigate("/exam")
-  }
   
   return (
     <>
@@ -17,7 +14,7 @@ export default function Information() {
      <div className='container1'>
       <div className='information d-flex flex-column align-items-center'>
         <h1 className='title-information'>INFORMATION PAGE</h1>
-        <button type="button"  onClick={changePage} class="btn btn-outline-primary fs-3 start">START THE EXAM</button>
+        <button type="button"  onClick={()=> navigate("/exam")} class="btn btn-outline-primary fs-3 start">START THE EXAM</button>
       </div>
     </div>
     </>

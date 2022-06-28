@@ -9,9 +9,8 @@ export default function Home() {
     console.log(user)
     return (
         <div>
-            
             <NavBar />
-            <h1>WELCOME</h1>
+            <h1>WELCOME </h1>
         </div>
     )
 }

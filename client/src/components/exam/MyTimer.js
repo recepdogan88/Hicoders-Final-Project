@@ -10,7 +10,8 @@ export function MyTimer({ expiryTimestamp }) {
 
   if (minutes < 2) {
     inputStyle = {
-      color: "red"
+      color: "red",
+      fontSize:"15px"
     }
   }
   
@@ -21,10 +22,15 @@ export function MyTimer({ expiryTimestamp }) {
       }
   }
   navigatePage()
+
+  const formatTime = (time) => {
+    return String(time).padStart(2, '0')
+  }
+  
   return (
     <div style={{ textAlign: 'center' }}>
-      <div style={{ fontSize: '40px' }}>
-        <span style={inputStyle}>{minutes}:{seconds}</span>
+      <div>
+        <span style={inputStyle}>Left Time : {formatTime(minutes)}:{formatTime(seconds)}</span>
       </div>
     </div>
   );

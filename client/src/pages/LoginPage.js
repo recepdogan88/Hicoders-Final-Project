@@ -11,6 +11,7 @@ export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const {user,setUser} = useContext(EnglishContext)
+    const [error,setError]=useState("")
 
     function handleLogin(e) {
         e.preventDefault();
@@ -19,7 +20,9 @@ export default function LoginPage() {
                 setUser(res.data)
                 localStorage.setItem('user', JSON.stringify(res.data))}
                 ) 
-            .catch(e => console.log(e))
+            .catch(e => setError(e.response.data))
+            setEmail("")
+            setPassword("")
       }
 
     
@@ -35,6 +38,7 @@ export default function LoginPage() {
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                             <form onSubmit={handleLogin}>
+                            {error && <p className='alert alert-danger'>{error}</p>}
                                 <div class="form-outline mb-4">
                                     <input type="email" id="loginName" class="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <label class="form-label" for="loginName">Email or username</label>

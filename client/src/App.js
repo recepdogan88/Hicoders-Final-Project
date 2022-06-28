@@ -19,12 +19,12 @@ function App() {
       <Routes>
         {!user && (
           <>
+          <Route path="/home" element={<Home />} /> 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<LoginPage />} />
             <Route path="/admin/*" element={<AdminPage />} />
           </>
         )}
-
           {user && 
           (
             <>
@@ -34,8 +34,6 @@ function App() {
           </>
           )
   	      }
-          
-          
           {/* {user?.isAdmin && 
             
           } */}

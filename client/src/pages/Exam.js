@@ -1,11 +1,11 @@
 import ExamUpper from '../components/exam/ExamUpper'
 import ExamMain from '../components/exam/ExamMain'
 import ExamFooter from '../components/exam/ExamFooter'
-import "./css/Exam.css"
 import { useContext } from 'react'
 import { EnglishContext } from '../context/EnglishContext'
 import { useEffect } from 'react'
 import NavBar from '../components/exam/NavBar'
+import "./css/Exam.css"
 
 
 
@@ -25,7 +25,7 @@ export default function Exam() {
     <>
       <NavBar/>
       <div className='main-exam'>
-        <div className='d-flex flex-column'>
+        <div className='d-flex'>
           <div className='exam d-flex flex-column col-6 mt-4'>
             <ExamUpper />
             <hr className='mb-5'></hr>
@@ -39,4 +39,3 @@ export default function Exam() {
   )
 }
 
-//<MyTimer expiryTimestamp={time} />

@@ -12,7 +12,7 @@ export default function LoginPage() {
     const [error, setError] = useState(null)
 
     let navigate = useNavigate();
-    const {setUser,user} = useContext(EnglishContext)
+    const {user, setUser} = useContext(EnglishContext)
 
     
     function handleSignup(e){
@@ -20,11 +20,10 @@ export default function LoginPage() {
         setError(null)
         axios.post('http://localhost:5000/students/signup', {email, password})
         .then(res =>  {
-           // setUser(res.data); 
+            setUser(res.data); 
             localStorage.setItem('user', JSON.stringify(res.data))
             console.log(user)
-            alert("You registered successfully")
-            navigate("/")
+            navigate("/home")
         })
 
         .catch(({response}) => {
