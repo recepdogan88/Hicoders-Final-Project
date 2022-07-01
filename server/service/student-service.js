@@ -22,3 +22,7 @@ export async function updateStudent(studentId, existingStudent){
 export async function findByEmail(email){
   return await studentRepository.findByEmail(email);
 }
+
+export async function addScore(userId, examId, score){
+  return await studentRepository.addScore(userId, examId, score)
+}

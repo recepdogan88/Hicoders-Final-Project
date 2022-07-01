@@ -1,5 +1,4 @@
 import express from 'express';
-import { User } from '../data/sequelize.js';
 import * as studentService from '../service/student-service.js';
 import bcrypt from 'bcrypt'
 const router = express.Router();
@@ -16,8 +15,8 @@ router.post('/signup', async(req, res)=> {
         if(!user) return res.status(401).json("You can't create an account with this email");
         // 
         if(user.password != null) return res.status(401).json("User already exists.");
-        const hashedPassword = await bcrypt.hashSync(password, 10); 
-        user.password = hashedPassword; 
+        const hashedPassword = await bcrypt.hash(password, 10); 
+         user.password = hashedPassword; 
         // save user here
         console.log(hashedPassword);
         await user.save();
@@ -28,20 +27,17 @@ router.post('/signup', async(req, res)=> {
 })
 
 router.post('/login', async(req,res) => {
-    const {email, password} = req.body;
     try {
+        const {email, password} = req.body;
         const user = await studentService.findByEmail(email); 
         if(!user || user.password === null) return res.status(401).json("Invalid credentials");
-        console.log(user)
-        const isSamePassword = (password, hash) => {
-            let comp = bcrypt.compareSync(password, hash)
-            return comp
-        }
-        //const isSamePassword = await bcrypt.compareSync(password, user.dataValues.password); 
-        //console.log(isSamePassword)
-        if(!isSamePassword) return res.status(401).json("Invalid credentials");
-        res.status(200).json(user)
-    } catch (error) {
+            const isSamePassword = await  bcrypt.compare(password,user.dataValues?.password);
+            console.log(isSamePassword, password, user.dataValues.password) 
+         if(!isSamePassword) return  res.status(401).json("Invalid credentials");
+         res.status(200).json(user)
+    }
+        catch (error) {
+            console.log(error.data);
         res.status(401).json("invalid credentials");
     }
 } )
@@ -50,6 +46,17 @@ router.get('/check-email', async(req, res)=> {
     const {email} = req.body
     const isInDb = await studentService.findByEmail(email); 
     res.status(200).send(isInDb)
+})
+
+router.post('/add-result', async(req, res)=> {
+    const {score, studentId, examId} = req.body;
+    try {
+        await studentService.addScore(studentId, examId, score); 
+        res.status(200).send()
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+
 })
 
 router.get("/:id", async (req, res)=>{

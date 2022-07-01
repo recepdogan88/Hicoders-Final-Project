@@ -26,38 +26,12 @@ const User = sequelize.define("User", {
 },
 
 {
-  hooks: {
-    beforeCreate: async(user)=>{
-      if(user.password){
-        const salt = await bcrypt.genSaltSync(10, 'a'); 
-        user.password = bcrypt.hashSync(user.password, salt); 
-      }
-    }, 
-
-    beforeUpdate: async(user)=> {
-      if(user.password){
-        const salt = await bcrypt.genSaltSync(10, 'a'); 
-        user.password = bcrypt.hashSync(user.password, salt); 
-      }
-    }, 
-  },
-  instanceMethods: {
-    validPassword: (password) => {
-      return bcrypt.compareSync(password, this.password)
-    }
-  },
   tableName: 'User'
 });
 
 User.prototype.validPassword = async(password, hash) => {
   return await bcrypt.compareSync(password, hash); 
 }
-
-
-
-
-
-
 
 const Question = sequelize.define("Question", {
     question: DataTypes.STRING,
@@ -83,9 +57,19 @@ const Exam = sequelize.define("Exam", {
 }
 );
 
+const Result = sequelize.define("Result", {
+  score: DataTypes.INTEGER,
+},
+{
+  tableName: "Result",
+}
+);
 
+
+User.hasMany(Result);
+Exam.hasMany(Result);
 
 await sequelize.sync({ alter: true });
 
-export { User, Question, Exam };
+export { User, Question, Exam, Result };
 
