@@ -68,6 +68,12 @@ const Result = sequelize.define("Result", {
 
 User.hasMany(Result);
 Exam.hasMany(Result);
+Exam.hasMany(Question); 
+Question.belongsTo(Exam,  {foreignKey: {
+  field: 'ExamId', 
+  defaultValue: 2, 
+  allowNull: false
+}});
 
 await sequelize.sync({ alter: true });
 

@@ -48,16 +48,6 @@ router.get('/check-email', async(req, res)=> {
     res.status(200).send(isInDb)
 })
 
-router.post('/add-result', async(req, res)=> {
-    const {score, studentId, examId} = req.body;
-    try {
-        await studentService.addScore(studentId, examId, score); 
-        res.status(200).send()
-    } catch (error) {
-        res.status(400).json(error.message)
-    }
-
-})
 
 router.get("/:id", async (req, res)=>{
     const studentId = req.params.id;

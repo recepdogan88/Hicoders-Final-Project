@@ -4,6 +4,11 @@ export async function getQuestions(query){
     return await questionRepository.findAll(query);
 }
 
+export async function getExamQuestions(examId){
+  return await questionRepository.findExamQuestions(examId);
+}
+
+
 export async function getQuestion(questionId){
   return await questionRepository.findById(questionId);
 }

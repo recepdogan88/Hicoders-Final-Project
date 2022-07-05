@@ -1,4 +1,4 @@
-import {Question} from "../data/sequelize.js"
+import {Exam, Question} from "../data/sequelize.js"
 import Sequelize from 'sequelize'; 
 const Op = Sequelize.Op;
 export async function findAll(query=""){
@@ -16,6 +16,14 @@ export async function findAll(query=""){
   	  })
 }
 
+export async function findExamQuestions(examId){
+  const exam = await Exam.findByPk(examId, {
+    include: Question
+  });
+  const examQuestions = exam.toJSON();
+  return examQuestions
+
+}
 export async function findById(pId){
     return await Question.findByPk(pId);
 }

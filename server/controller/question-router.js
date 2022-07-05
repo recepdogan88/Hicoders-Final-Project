@@ -8,6 +8,18 @@ router.get("/questions", async (req, res)=>{
     res.status(200).send(list);
 })
 
+
+
+router.get('/:examId/examQuestions', async (req, res) => {
+    const {examId} = req.params;
+    try {
+        const questions = await questionService.getExamQuestions(examId);
+        res.status(200).send(questions);   
+    } catch (error) {
+        res.status(400).json(error.message)
+    } 
+ 
+} )
 router.get("/questions/:id", async (req, res)=>{
     const questionId = req.params.id;
     const question = await questionService.getQuestion(questionId);
@@ -17,7 +29,6 @@ router.get("/questions/:id", async (req, res)=>{
 router.post("/questions", async (req, res)=>{
     const question = req.body;
     const newQuestion = await questionService.createQuestion(question);
-    console.log('new student create', newQuestion);
     res.status(201).json(question);
 })
 

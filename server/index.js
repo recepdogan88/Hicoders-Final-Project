@@ -4,6 +4,7 @@ import cors from 'cors';
 import {router as studentRouter} from './controller/students-router.js'
 import { router as questionRouter } from "./controller/question-router.js";
 import { router as examRouter } from "./controller/exam-router.js";
+import { router as resultRouter } from "./controller/result-router.js";
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use('/students', studentRouter);
 app.use("/", questionRouter);
 app.use("/",examRouter)
+app.use("/",resultRouter)
 
 
 app.use((err, req, res, next) => {

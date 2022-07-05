@@ -1,4 +1,4 @@
-import {User, Result} from "../data/sequelize.js"
+import {User} from "../data/sequelize.js"
 
 
 export async function findAllStudents(){
@@ -37,10 +37,3 @@ export async function remove(pId){
       });
 }
 
-export async function addScore(studentId, examId, score){
-    return await Result.create({
-        UserId: studentId, 
-        ExamId: examId, 
-        score
-    })
-}
