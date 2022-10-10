@@ -37,20 +37,18 @@ export default function LoginPage() {
     
 
     return (
-        <div className='container login-main'>
-            <div className='row '>
-                <div className='col-5 m-5'>
+        <div className='container-fluid login-main d-flex justify-content-center align-items-center'>
+            <div className='row'>
+                <div className='col-lg-9 m-5 text-center'>
                     <h1 className='titlesign'>SIGN UP</h1>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                             <form onSubmit={handleSignup}>
                                 {error && <p className='alert alert-danger'>{error}</p>}
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="loginName" class="form-control" value={email} onChange={(e)=>setEmail(e.target.value) }/>
+                                    <input type="email" id="loginName" class="form-control-lg" value={email} onChange={(e)=>setEmail(e.target.value) }/>
                                     <label class="form-label" for="loginName">Email or username</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="loginPassword" class="form-control" value={password} onChange={(e)=> setPassword(e.target.value)} />
+                                    <input type="password" id="loginPassword" class="form-control-lg" value={password} onChange={(e)=> setPassword(e.target.value)} />
                                     <label class="form-label" for="loginPassword">Password</label>
                                 </div>
                                 <div className='signorback-login'>
@@ -58,11 +56,7 @@ export default function LoginPage() {
                                 <p style={{fontSize:"30px"}}>OR</p>
                                 <button type="submit" class="btn btn-primary  mb-4 sign-in back-login" onClick={()=> navigate("/")}>Back Login</button>
                                 </div>
-                                
                             </form>
-                        </div>
-                        
-                    </div>
                 </div>
             </div>
         </div>

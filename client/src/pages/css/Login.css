@@ -1,34 +1,31 @@
 .login-main{
-    margin-top: 10%;
-    margin-left: 35%;
-}
-
-body{
+    width: 100%;
+    height: 100vh;
     background-color: aliceblue;
 }
 .sign-in{
-  width: 150px;
-  height: 50px;
-  font-size: 23px;
+  height: 40px;
+  font-size: 18px;
   font-weight: 600;
   background-color: #DD39A3;
 }
 input{
     height: 50px;
+    width: 100%;
 }
 .titleLogin{
-    font-size: 50px;
-    margin-left: 5rem;
+    font-size: 30px;
     margin-bottom: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #DD39A3;
+    margin-top: 50px;
 }
 .titlesign{
-    font-size: 50px;
-    margin-left: 7rem;
+    font-size: 30px;
     margin-bottom: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #DD39A3;
+    text-align: center;
 }
 .login-sign-div{
     align-items: center;
@@ -46,9 +43,9 @@ input{
     color: rgb(225, 232, 239);
 }
 .back-login{
-    width: 150px;
-    height: 50px;
-    font-size: 23px;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
     font-weight: 600;
     background-color: #496fb2;
 }
