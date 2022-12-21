@@ -24,7 +24,7 @@ export default function Exam() {
   return (
     <>
       <NavBar/>
-      <div className='main-exam'>
+      <div className='main-exam col-9'>
         <div className='d-flex'>
           <div className='exam d-flex flex-column col-6 mt-4'>
             <ExamUpper />
